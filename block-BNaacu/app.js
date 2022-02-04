@@ -18,6 +18,7 @@ app.set("views", path.join(__dirname, "views"));
 
 //middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //Routing middleware
 app.use("/students", studentRouter);
