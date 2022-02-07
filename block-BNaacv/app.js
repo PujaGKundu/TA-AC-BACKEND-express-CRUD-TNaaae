@@ -1,13 +1,7 @@
 //require
 var express = require("express");
-var mongoose = require("mongoose");
 var path = require("path");
 var userRouter = require("./routes/users");
-
-//connect to database
-mongoose.connect("mongodb://localhost/sample", (err) => {
-  console.log(err ? err : "Connected to Database");
-});
 
 //instance the app
 var app = express();
@@ -25,7 +19,7 @@ app.use("/users", userRouter);
 
 //error handler
 app.use((req, res, next) => {
-  res.send("Page Not Found");
+  res.status(404).send("Page Not Found");
 });
 
 //listener
