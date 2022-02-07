@@ -10,7 +10,7 @@ router.get("/new", (req, res) => {
 
 //Saving data
 router.post("/", (req, res, next) => {
-  user.create(req.body, (err, createduser) => {
+  User.create(req.body, (err, createduser) => {
     if (err) {
       return next(err);
     }
