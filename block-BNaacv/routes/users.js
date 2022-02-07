@@ -4,7 +4,7 @@ var router = express.Router();
 //User Routes
 //Creating new User
 router.get("/new", (req, res) => {
-  res.render("userForm");
+  res.render("userForm.ejs");
 });
 
 //Saving data
@@ -13,15 +13,18 @@ router.post("/", (req, res) => {
 });
 
 //fetch the User
-router.get("/", (req, res) => {});
+router.get("/", (req, res) => {
+  res.render("users.ejs");
+});
 
 //fetch only one User
-router.get("/:id", (req, res) => {});
-
-//updating User form
-router.get("/:id/edit", (req, res) => {});
+router.get("/:id", (req, res) => {
+  res.render("singleUser.ejs");
+});
 
 //update User
+router.get("/:id/edit", (req, res) => {});
+
 router.put("/:id", (req, res) => {});
 
 //delete User
